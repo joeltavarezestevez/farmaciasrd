@@ -11,4 +11,7 @@ Detalles en Play Store: https://play.google.com/store/apps/details?id=com.despro
 Hecho con 
 #### Ionic Framework
 
-[This link](http://example.com/ "Title") has a title attribute.
+Redes Sociales:
+* [Facebook](https://www.facebook.com/farmaciasrdapp/) 
+* [Twitter](https://twitter.com/farmaciasrdapp/)
+* [Instagram](https://www.instagram.com/farmaciasrdapp/)
