@@ -1,0 +1,27 @@
+<ion-view hide-nav-bar="true" >
+  <ion-content class=" login-container" padding="true" scroll="false">
+    <div class="spacer" style="height: 5%;"></div>
+    <div class = "col">
+       <img src="img/drugstore.png" class="center" width="25%" class = "logo"/>
+    </div>
+    <div class = "col">
+       <h3 class="text-center"  style="color: black;" > Iniciar Sesión </h3>
+    </div>        
+    <form name="createAccountForm" novalidate>
+      <div class="list">
+          <input class="item item-input" type="text" style="color: black; background: transparent;" placeholder="Nombre de Usuario" ng-model="data.username">
+        <div class="spacer" style="height: 20px;"></div>
+          <input class="item item-input" type="password" style="color: black; background: transparent;" placeholder="Contraseña" ng-model="data.password">
+      </div>
+    </form>
+    <div class = "col text-center">
+      <strong><button class="button button-clear button-positive" ng-click="createAccount()">Olvidaste tu contraseña?</button></strong>
+    </div>          
+    <div class="col text-center">                  
+      <button class="button button-block button-outline button-assertive center" ng-disabled="myForm.$invalid" ng-click="login()">Iniciar sesión</button>
+    </div>
+    <div class = "col light text-center" style="color: black;">
+      No tienes una cuenta? &nbsp;<strong><a ng-click="createAccount()">Crear cuenta</a></strong>
+    </div>       
+  </ion-content>
+</ion-view>

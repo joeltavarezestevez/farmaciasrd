@@ -1,0 +1,49 @@
+<ion-view view-title="Detalles" align-title="center">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
+        <button class="button button-icon button-clear ion-ios-arrow-left" ng-click="goBack()"></button>
+    </ion-nav-buttons> 
+        <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-android-call" ng-if="details.result.international_phone_number" ng-click="call('tel:{{details.result.international_phone_number}}')"></button>&nbsp;
+        <button class="button button-icon button-clear ion-earth" ng-if="details.result.website" ng-click="link('{{details.result.website}}')"></button>&nbsp;            
+        <button class="button button-icon button-clear ion-map" ng-if="details.result.url" ng-click="map('{{details.result.url}}')"></button>
+    </ion-nav-buttons> 
+  <ion-content class="padding" scroll="true">
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="img/drugstore.png">
+        <h2>{{details.result.name}}</h2>
+        <!--<p>Agregar servicios que ofrece</p> -->
+          <p id="rating"></p>
+          <p ng-if="distance_details" ><strong class="positive">{{distance_details}} - {{time_details}}</strong></p>  
+      </div>
+      <div class="item item-image">
+          <p ng-if="photo_url" style="text-align:center;" ><img ng-src="{{photo_url}}" style="width: 130px;"></p>
+          <p ng-if="!photo_url" style="text-align:center;" ><img src="img/drugstore.png" style="width: 130px;"></p>
+      </div>
+      <p style="margin-left: 3em; margin-top: 1em;"><i class="icon ion-location"></i><small> {{details.result.formatted_address}}</small></p>
+        <a ng-if="details.result.international_phone_number" ng-click="call('tel:{{details.result.international_phone_number}}')"><p style="margin-left: 3em;"><i class="icon ion-android-call"></i> {{details.result.formatted_phone_number}}</p></a>
+      <a style="margin-left: 3em;" ng-if="details.result.website" ng-click="link('{{details.result.website}}')"><p style="margin-left: 3em;"><i class="icon ion-earth"></i> {{details.result.website}}</p></a>
+      <p style="margin-left: 3em;" ng-if="details.result.opening_hours.weekday_text[0]"><small><i class="icon ion-clock"></i> <strong>Horario:</strong></small></p>
+      <div style="margin-left: 3em; line-height: 50%;">
+          <p><small>{{details.result.opening_hours.weekday_text[0]}}</small></p>
+          <p><small>{{details.result.opening_hours.weekday_text[1]}}</small></p>
+          <p><small>{{details.result.opening_hours.weekday_text[2]}}</small></p>
+          <p><small>{{details.result.opening_hours.weekday_text[3]}}</small></p>
+          <p><small>{{details.result.opening_hours.weekday_text[4]}}</small></p>
+          <p><small>{{details.result.opening_hours.weekday_text[5]}}</small></p>
+          <p><small>{{details.result.opening_hours.weekday_text[6]}}</small></p>
+          <p><small>{{details.result.opening_hours.weekday_text[7]}}</small></p>          
+      </div>
+        <a class="item item-icon-left assertive" ng-if="details.result.international_phone_number" ng-click="call('tel:{{details.result.international_phone_number}}')">
+            <i class="icon ion-android-call"></i>LLamar
+        </a>
+        <a class="item item-icon-left assertive" ng-if="details.result.url" ng-click="map('{{details.result.url}}')">
+            <i class="icon ion-map"></i>Ver en Google Maps
+        </a>
+        <!--<a class="item item-icon-left assertive" ng-click="pedido()">
+            <i class="icon ion-compose"></i>Realizar Pedido
+        </a> -->    
+    </div>
+  </ion-content>
+</ion-view>

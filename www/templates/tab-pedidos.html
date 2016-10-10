@@ -1,0 +1,48 @@
+<ion-view view-title="Pedidos">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
+    </ion-nav-buttons>    
+  <ion-content scroll="true" padding="true">
+      <h4 ng-if="FarmaciaNombre" style="text-align: center;">Pedido a: {{FarmaciaNombre}}</h4>
+      <div class="card">
+          <div class="item item-divider">Documento de Identidad</div>
+          <div class="item row">
+              <img class="col col-50" ng-show="imgdocumento !== undefined" ng-src="{{imgdocumento}}" style="text-align: center;">
+              <a class="col col-20 button button-outline icon ion-camera button-assertive" ng-click="takePhoto(1)"></a>
+              &nbsp;
+              <a class="col col-20 button button-outline icon ion-image button-assertive" ng-click="choosePhoto(1)"></a>
+          </div>
+      </div>      
+      <div class="card">
+          <div class="item item-divider">Receta</div>
+          <div class="item row">
+              <img class="col col-50" ng-show="imgreceta !== undefined" ng-src="{{imgreceta}}" style="text-align: center">
+              <a class="col col-20 button button-outline icon ion-camera button-assertive" ng-click="takePhoto(2)"></a>
+              &nbsp;
+              <a class="col col-20 button button-outline icon ion-image button-assertive" ng-click="choosePhoto(2)"></a>
+          </div>
+      </div>
+      <div class="card">
+          <div class="item item-divider">Seguro Médico</div>
+          <div class="item row">
+              <img class="col col-50" ng-show="imgseguro !== undefined" ng-src="{{imgseguro}}" style="text-align: center">
+              <a class="col col-20 button button-outline icon ion-camera button-assertive" ng-click="takePhoto(3)"></a>
+              &nbsp;
+              <a class="col col-20 button button-outline icon ion-image button-assertive" ng-click="choosePhoto(3)"></a>
+          </div>
+      </div>      
+      <div class="card">
+          <div class="item item-divider">Forma de Entrega</div>
+          <div class="item row">
+              <ion-radio class="col col-50" ng-model="choice" ng-value="'A'">Envío</ion-radio>
+              <ion-radio class="col col-50" ng-model="choice" ng-value="'B'">Recoger</ion-radio>
+          </div>
+          <label ng-if="choice=='A'" class="item item-input">
+              <input type="text" placeholder="Dirección">
+          </label>
+      </div>
+      <div class="center">
+          <a class="button icon-right ion-paper-airplane button-assertive" ng-click="pedido()">Enviar Pedido</a>
+      </div>
+  </ion-content>
+</ion-view>

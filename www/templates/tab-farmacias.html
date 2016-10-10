@@ -1,0 +1,28 @@
+<ion-view view-title="Farmacias">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" ng-click="openMenu()"></button>
+    </ion-nav-buttons>     
+  <ion-content scroll="true">
+      <!--<ion-refresher
+                pulling-text="Arrastre para refrescar..."
+                on-refresh="doRefresh()">
+        </ion-refresher> -->
+      <div class="list list-inset">
+      <div class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" ng-model="search" placeholder=" Buscar Farmacia" />
+      </div>
+    </div>
+      <div>
+        <ion-list show-delete="false" can-swipe="true">
+          <ion-item ng-repeat="result in results | filter:search" class="item item-icon-left item-text-wrap" href="#/tab/farmacias/{{result.place_id}}">
+            <i class="icon ion-medkit"></i>
+            <h4>{{result.name| limitTo: 25}}</h4>
+            <p><small>{{result.vicinity}}</small></p>
+            <p><small><strong>{{times[$index]}}</strong></small></p>
+            <span ng-if="distances[$index]" class="badge badge-positive"><small>{{distances[$index]}}</small></span>
+          </ion-item>
+        </ion-list>
+      </div>
+  </ion-content>
+</ion-view>
