@@ -9,9 +9,9 @@ Ya no tendrás que preguntar donde esta la farmacia mas cercana a tu ubicación,
 Detalles en Play Store: https://play.google.com/store/apps/details?id=com.desprosolutions.farmaciasrd
 
 Hecho con 
-#### Ionic Framework
+### Ionic Framework
 
-Redes Sociales:
+### Redes Sociales:
 * [Facebook](https://www.facebook.com/farmaciasrdapp/) 
 * [Twitter](https://twitter.com/farmaciasrdapp/)
 * [Instagram](https://www.instagram.com/farmaciasrdapp/)
